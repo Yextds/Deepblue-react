@@ -79,14 +79,13 @@
 
         // var baseURL = params.baseURL + (params.baseURL.includes('?') ? '&' : '?');
        var baseURL = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500";
-       var api_key = "cc8b0bde99d9d71f0f7a6fa03200807b";
+       var api_key = "b262ae7768eec3bfa53bfca6d48e4000";
        var vparam = "20181017";
        var location=params.location;
        var limit = params.limit;
        var offset=params.offset;
        var entityTypes =
-           "location";
-       var savedFilterIds = "953846729";
+           "restaurant";
        var fields = "name,hours,neighborhood,address,mainPhone,slug,timeZoneUtcOffset,displayCoordinate,yextDisplayCoordinate";
        
        var fullURL = baseURL
@@ -97,7 +96,6 @@
            + "&entityTypes=" + entityTypes
            + "&fields=" + fields
            + "&resolvePlaceholders=true"
-           + "&savedFilterIds=" + savedFilterIds
            +"&offset="+offset; 
           
          return ApiCall.fetch(fullURL , 'get');	
@@ -107,11 +105,11 @@
 
         //var baseURL = params.baseURL + (params.baseURL.includes('?') ? '&' : '?');
        var baseURL = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities?";
-       var api_key = "cc8b0bde99d9d71f0f7a6fa03200807b";
+       var api_key = "b262ae7768eec3bfa53bfca6d48e4000";
        var vparam = "20181017";
        var limit =params.limit;
        var offset=params.offset;
-       var entityTypes = "location";
+       var entityTypes = "restaurant";
        var savedFilterIds = "953846729";
        var fields = "name,hours,neighborhood,address,mainPhone,slug,timeZoneUtcOffset,displayCoordinate,yextDisplayCoordinate";
        
