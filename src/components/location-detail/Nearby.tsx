@@ -131,12 +131,6 @@ export default function Nearby(props: any) {
                                   </svg>
                                 </a>
                               </div>
-                              <div className="inline-block mt-3 w-full font-nexa_lightregular text-[15px] ">
-                                {openClose.formatOpenNowString(
-                                  location.hours,
-                                  abc
-                                )}
-                              </div>
                               <div className="mt-5 lg:absolute lg:bottom-4 "></div>
                             </div>
                             </SplideSlide>

@@ -31,6 +31,9 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from 'react-accessible-accordion';
+import   Nav  from "../components/Nav";
+import Footer from "../components/footer";
+import Faq from "../components/location-detail/Faq";
  
  export const config: TemplateConfig = {
    stream: {
@@ -145,15 +148,18 @@ import {
 
    return (
      <>
-      <PageLayout >   
+          <Nav />
           <Banner name={name} c_deepBlueStoreMessage={c_deepBlueStoreMessage}/>
           <Breadcrumb dm_directoryParents={dm_directoryParents} name={name}/>             
           <Contact address={address} name={name} c_documentURLDeepBlue1={c_documentURLDeepBlue1} c_extraservices2={c_extraservices2} phone={mainPhone} latitude={yextDisplayCoordinate.latitude}
           longitude={yextDisplayCoordinate.longitude} hours={hours} deliveryHours={deliveryHours} takeoutHours={takeoutHours}></Contact>
           <Services services={services}/>
           <About />
+          {c_relatedmenuitemsdeepblue?
           <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue} c_documentURLDeepBlue1={c_documentURLDeepBlue1.uRL2} c_documentURLDeepBlue1prim={c_documentURLDeepBlue1.primaryCTA} name="Allergens"/>
+                        :''}
           <Faciltites c_extraServiceAvailable1={c_extraServiceAvailable1} />
+         
           
    {/* {c_relatedFAQs?
     <div className=" faq-sec w-full mt-0 lg:mt-36 xl:mt-52 relative  pb-9  before:shadow-[10px_3px_26px_rgba(0,0,0,0.10)] 
@@ -205,9 +211,9 @@ import {
     </div>
 :''}  */}
           <Nearby latitude={yextDisplayCoordinate.latitude} longitude={yextDisplayCoordinate.longitude}/>     
-  
+    <Footer/>
 
-       </PageLayout>
+
      </>
    );
  };
