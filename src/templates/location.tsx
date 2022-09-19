@@ -124,6 +124,8 @@ import Faq from "../components/location-detail/Faq";
      c_deepBlueStoreMessage,
      c_extraservices2,
      c_documentURLDeepBlue1,
+     photoGallery,
+     description,
      dm_directoryParents,
      c_extraServiceAvailable1,
      c_relatedmenuitemsdeepblue,
@@ -155,7 +157,7 @@ import Faq from "../components/location-detail/Faq";
           <Contact address={address} name={name} c_documentURLDeepBlue1={c_documentURLDeepBlue1} c_extraservices2={c_extraservices2} phone={mainPhone} latitude={yextDisplayCoordinate.latitude}
           longitude={yextDisplayCoordinate.longitude} hours={hours} deliveryHours={deliveryHours} takeoutHours={takeoutHours}></Contact>
           <Services services={services}/>
-          <About />
+          <About name={name} photoGallery={photoGallery}  description={description}/>
           {c_relatedmenuitemsdeepblue?
           <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue} c_documentURLDeepBlue1={c_documentURLDeepBlue1.uRL2} c_documentURLDeepBlue1prim={c_documentURLDeepBlue1.primaryCTA} name="Allergens"/>
                         :''}

@@ -11,20 +11,17 @@ const PhotoSlider = (props: any) => {
       arrows: true
     } }>
      
-      
-      <SplideSlide>
+      {photoGallery.map((e,i)=>{
+         return(
+          <>
+           <SplideSlide>
         <div className="slide-img">
-        <img src={abbanner} className="block w-full max-h-full  h-[500px] object-cover" alt="..." />
+        <img src={e.image.url} className="block w-full max-h-full  h-[420px] object-cover" alt="..." />
         </div>
         </SplideSlide>
-        <SplideSlide>
-        <div className="slide-img">
-        <img src={dt12} className="block  w-full max-h-full h-[500px] object-cover" alt="..." />
-        </div>
-        </SplideSlide>
-        
-
-
+          </>
+         )
+      })}
     </Splide>
   );
 
