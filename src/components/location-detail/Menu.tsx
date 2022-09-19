@@ -48,7 +48,7 @@ const Menu = (props) => {
                 <>
                 <Tab item={`tab-${(i+1)}`} className="!border-none !px-0  text-white font-semibold !py-2" >
                 
-                <a onClick={setClass} id={`${menuItem}`} href={`#${ menuItem }`} className={`border-none text-white px-4 py-2 tab-link  ${current==menuItem?'current':''} `}> { menuItem.replaceAll('_',' ') }</a>
+                <a onClick={setClass} id={`${menuItem}`} href={`#${ menuItem }`} className={selectedTab=='tab-0'?'border-none text-white px-4 py-2 tab-link  current':`border-none text-white px-4 py-2 tab-link  ${current==menuItem?'current':''}`}> { menuItem.replaceAll('_',' ') }</a>
                
                     </Tab>      
                 </>
@@ -92,27 +92,25 @@ const Menu = (props) => {
              </div>
            </div>
             </div>
-             </div> 
-        </div>
+            <div className="allergens-sec">
+                <ul>
+                <li>
+                <div id="main"></div> 
+                <Model c_documentURLDeepBlue1={props.c_documentURLDeepBlue1} c_documentURLDeepBlue1prim={props.c_documentURLDeepBlue1prim} name="Allergens"/></li>
+                <li><a className="#"> Collection</a></li>
+                <li><a className="#"> Delivery : Our Driver</a></li>
+                <li><a className="#"> Dine In</a></li>
+                </ul>
+            </div> 
+            </div> 
+         </div>  
       </Tabs>
+      
       </ThemeProvider>
-
-
-<div className="allergens-sec">
-
-<ul>
-    <li>
-    <div id="main"></div> 
-    <Model c_documentURLDeepBlue1={props.c_documentURLDeepBlue1} c_documentURLDeepBlue1prim={props.c_documentURLDeepBlue1prim} name="Allergens"/></li>
-    <li><a className="#"> Collection</a></li>
-    <li><a className="#"> Delivery : Our Driver</a></li>
-    <li><a className="#"> Dine In</a></li>
-</ul>
+      
 
 
 
-
-</div> 
 </>
     
   );

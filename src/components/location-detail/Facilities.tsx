@@ -5,7 +5,7 @@ import faci3 from "../../images/faci3.svg"
 import faci4 from "../../images/faci4.svg"
 
 export default function Faciltites(props){
-    console.log(props.c_extraServiceAvailable1);
+
     return(
         <>
         { props.c_extraServiceAvailable1!== undefined?

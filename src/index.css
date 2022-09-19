@@ -702,4 +702,6 @@ Footer
   @apply z-[50];
 }
 
-  
+
+/* .menu-main-bx .StyledTab-sc-x2pbow-0:first-child a {@apply bg-blue-dark rounded-2xl    text-white} */
+.jtcALc{@apply  bg-blue-dark rounded-2xl    text-white} 

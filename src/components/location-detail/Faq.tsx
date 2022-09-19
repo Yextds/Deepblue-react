@@ -7,22 +7,35 @@ import {
     AccordionItemHeading,
     AccordionItemButton,
     AccordionItemPanel,
+    AccordionItemState
 } from 'react-accessible-accordion';
 
 
 export default function Faq(props) {
     const[current,setCurrent]=useState('');
+    const [isShow, setIsShow] = useState(false);
+    const [faqId, setFaqId] = useState(null);
+    const [faqClass, setFaqClass] = useState("");
     let preExpandedarr=[];
 
     if(props.c_relatedFAQs.length > 0){
         props.c_relatedFAQs.map((e,i)=>{
             if(i==0){
-                preExpandedarr=[e.question]
-            
-            } 
+                preExpandedarr=[e];
+            }  
         })
     }
-
+    const isShowContent = (e: any) => {
+        setFaqId(e.currentTarget.id);
+    
+        if (isShow) {
+          setIsShow(false);
+          setFaqClass("");
+        } else {
+          setIsShow(true);
+          setFaqClass("opened");
+        }
+      };
     function setclass(e){
         setCurrent(e.target.id)
     }
@@ -37,28 +50,33 @@ export default function Faq(props) {
                     <div className="relative pr-0  lg:pr-16 pb-14">
                         <h2 className=" text-optimabold hidden lg:block text-[42px] text-left pt-10 xl:pt-8 pb-4 uppercase text-text-blue-dark ">FREQUENTLY ASKED QUESTIONS </h2>
                     <div className="faq-tabs" >
-                  
-              {props.c_relatedFAQs.map((e,i)=>{
-                
+                        
+                    <Accordion preExpanded={[1,2]}>
+
+
+
+              {props.c_relatedFAQs.map((e,i)=>{  
+                console.log(e,'???????')              
                   return(<>
                 <div  className={`faq-tab py-0 mt-2  ${current==e.question?'current':''}`} >
-                 <Accordion  preExpanded={preExpandedarr}>
-                 {e.question? <AccordionItem uuid={e.question}>
+               
+                 {e.question? <AccordionItem key={i} uuid={i} >
                 <AccordionItemHeading>
                     <AccordionItemButton>
                     <h3 id={e.question} className="faq-tab-label  border-[1px] !text-base   border-[#3A78B7]  !p-2 " onClick={setclass}>{e.question}</h3>
-                    </AccordionItemButton>
+                    </AccordionItemButton>                    
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                 <div className="faq-tab-content">
                   {e.answer}
                 </div>
                 </AccordionItemPanel>
-               </AccordionItem>:''}
-              </Accordion>
+               </AccordionItem>:''}           
+               
               </div>  
                   </>)
               })}  
+              </Accordion>
       </div>
       <div className="text-center  absolute bottom-0 xl:bottom-0 left-0 w-full pr-0  lg:pr-16"> <a href="#" className="bg-blue-primary mt-4  xl:mt-0 uppercase  px-5
                          text-white hover:text-white text-sm !leading-9 text-center

@@ -106,6 +106,7 @@ import Faq from "../components/location-detail/Faq";
          },
        },
      ],
+     
    };
  };
  

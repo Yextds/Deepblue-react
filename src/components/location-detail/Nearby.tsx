@@ -12,7 +12,7 @@ export default function Nearby(props: any) {
     let params = {
       location: `${latitude},${longitude}`,
       offset: 0,
-      limit: 3,
+      limit: 4,
     };
 
     ApiCall.getNearbyLocations(params).then((data) => {
@@ -60,7 +60,7 @@ export default function Nearby(props: any) {
                     );
                     return (
                       <>
-                        
+                        {index>0?
                           <SplideSlide key={location.name}>
                             <div className="near-location">
                               <h4>
@@ -111,7 +111,7 @@ export default function Nearby(props: any) {
                               <div className="store-link">
                                 <a
                                   className="direction"
-                                  href={`https://www.google.com/maps/dir/?api=1&amp;destination=${location.yextDisplayCoordinate.latitude},%20${location.yextDisplayCoordinate.longitude}`}
+                                  href={`https://www.google.com/maps/dir/?api=1&destination=${location.yextDisplayCoordinate.latitude},%20${location.yextDisplayCoordinate.longitude}`}
                                   target="_blank"
                                 >
                                
@@ -135,7 +135,7 @@ export default function Nearby(props: any) {
                             </div>
                             </SplideSlide>
 
-
+:''}
                       </>
                     );
                   })}
