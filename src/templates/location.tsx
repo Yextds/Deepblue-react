@@ -159,7 +159,8 @@ import Faq from "../components/location-detail/Faq";
           <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue} c_documentURLDeepBlue1={c_documentURLDeepBlue1.uRL2} c_documentURLDeepBlue1prim={c_documentURLDeepBlue1.primaryCTA} name="Allergens"/>
                         :''}
           <Faciltites c_extraServiceAvailable1={c_extraServiceAvailable1} />
-         
+          {c_relatedFAQs?
+          <Faq c_relatedFAQs={c_relatedFAQs}/>:''}
           
    {/* {c_relatedFAQs?
     <div className=" faq-sec w-full mt-0 lg:mt-36 xl:mt-52 relative  pb-9  before:shadow-[10px_3px_26px_rgba(0,0,0,0.10)] 
