@@ -72,7 +72,7 @@ import Faq from "../components/location-detail/Faq";
       "c_relatedFAQs.answer"
      ],
      filter: {
-      entityTypes: ["restaurant"],
+      savedFilterIds: ["1012371889"],
      },
      localization: {
        locales: ["en"],
