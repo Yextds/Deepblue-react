@@ -546,17 +546,18 @@ FAQ
 
 /* FAQ accordion */
 .faq-tabs {  @apply  overflow-hidden}
-.faq-tab {  @apply  w-full px-2 xl:px-0 2xl:px-2  text-white overflow-hidden}
+.faq-tab {  @apply  w-full px-2 xl:px-0 2xl:px-2  text-[#06488B] overflow-hidden}
+.faq-tab button{ @apply w-full}
 .faq-tab-label{   @apply flex justify-between text-[#06488B] relative sm:p-4  
   border-blue-primary border border-solid  font-bold cursor-pointer before:bg-[#06488B] before:rounded-full before:w-[18.75px] before:h-[18.75px]
   before:p-0 before:absolute before:right-3 before:top-2 after:absolute after:top-[12px] after:right-[17px] after:content-[''] after:w-3 after:h-3 after:text-center 
   after:transition-all  after:duration-150 lg:!text-sm xl:text-base  after:w-2 after:h-2 after:border-r-2 after:border-b-2 after:border-white after:transform after:rotate-45
 }
 
-.faq-tab-content { @apply !bg-white w-full  max-h-0 px-4  text-white}
+.faq__desc { @apply !bg-white w-full  max-h-0 px-4  text-white}
 .faq-tab-close { display: flex;  justify-content: flex-end;  padding: 1em;  font-size: 0.75em;  background: #2c3e50; cursor: pointer;}
-.faq-tab.current .faq-tab-label{  @apply text-white bg-[#115EAC] before:bg-white after:border-blue-primary after:-rotate-[135deg] after:top-[15px]}
-.faq-tab.current .faq-tab-content {  @apply max-h-screen p-4 text-[#115EAC] border-blue-primary border border-solid lg:transition-all lg:duration-500 xl:text-base }
+.faq-tab.current .faq-tab button{  @apply text-white bg-[#115EAC] before:bg-white after:border-blue-primary after:-rotate-[135deg] after:top-[15px]}
+.faq-tab .current{  @apply max-h-screen p-4 text-[#115EAC] border-blue-primary border border-solid lg:transition-all lg:duration-500 xl:text-base }
 input:checked + .faq-tab-label {  background: #1a252f;}
 input:checked + .faq-tab-label::after {transform: rotate(90deg);}
 
@@ -706,4 +707,5 @@ Footer
 /* .menu-main-bx .StyledTab-sc-x2pbow-0:first-child a {@apply bg-blue-dark rounded-2xl    text-white} */
 .jtcALc{@apply  bg-blue-dark rounded-2xl    text-white} 
 .cOEnpb{@apply  bg-blue-dark rounded-2xl    text-white} 
+.xyz .dixjUD{@apply overflow-visible } 
 

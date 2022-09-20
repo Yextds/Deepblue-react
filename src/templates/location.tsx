@@ -53,6 +53,7 @@ import Faq from "../components/location-detail/Faq";
       "services",
       "neighborhood",
       "paymentOptions",
+      "c_facilitiesService",
       "c_relatedFAQs.question",
       "c_documentFile",
       "c_documentURLDeepBlue1",
@@ -132,6 +133,7 @@ import Faq from "../components/location-detail/Faq";
      takeoutHours,
      c_deepBlueStoreMessage,
      c_extraservices2,
+     c_facilitiesService,
      c_documentURLDeepBlue1,
      photoGallery,
      description,
@@ -182,8 +184,8 @@ import Faq from "../components/location-detail/Faq";
           <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue} c_documentURLDeepBlue1={c_documentURLDeepBlue1.uRL2} c_documentURLDeepBlue1prim={c_documentURLDeepBlue1.primaryCTA} name="Allergens"/>
                         :''}
           
-          {c_extraServiceAvailable1?
-          <Faciltites c_extraServiceAvailable1={c_extraServiceAvailable1} />
+          {c_facilitiesService?
+          <Faciltites c_facilitiesService={c_facilitiesService} />
           :''}
           
           {c_relatedFAQs?

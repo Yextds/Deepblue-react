@@ -37,6 +37,7 @@ const Menu = (props) => {
   return (  
     <>
      <ThemeProvider>
+      <div className="xyz">
       <Tabs selectedItem={selectedTab} onChange={setSelectedTab}>
          <div id="menu" className="container-custom  mx-auto border-none">
             <div className="menu-main-bx ">
@@ -105,7 +106,7 @@ const Menu = (props) => {
             </div> 
          </div>  
       </Tabs>
-      
+      </div>
       </ThemeProvider>
       
 

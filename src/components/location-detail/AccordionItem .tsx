@@ -4,6 +4,7 @@ const AccordionItem = ({
   showDescription,
   ariaExpanded,
   fontWeightBold,
+  background,
   item,
   index,
   onClick,
@@ -18,7 +19,7 @@ const AccordionItem = ({
         className={`faq__question-button ${fontWeightBold}`}
         onClick={onClick}
       >
-      <h3 className="faq-tab-label  border-[1px] !text-base   border-[#3A78B7]  !p-2 ">{item.question}</h3>
+      <h3 className={`faq-tab-label  border-[1px]   border-[#3A78B7]  !p-2 ${background} `}>{item.question}</h3>
       </button>
       <div
         id={`faq${index + 1}_desc`}

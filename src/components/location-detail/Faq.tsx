@@ -42,13 +42,15 @@ export default function Faq(props) {
   }
     const renderedQuestionsAnswers = props.c_relatedFAQs.map((item, index) => {
     const showDescription = index ===  activeIndex  ? "current" : "hidden";
-    const fontWeightBold = index === activeIndex ? "font-weight-bold" : "";
+    const background = index ===  activeIndex  ? "bg-[#115eac] !text-white" : "";
+    const fontWeightBold = index === activeIndex ? "font-weight-bold faq-tab py-0 mt-2": "";
     const ariaExpanded = index === activeIndex ? "true" : "false";
     return (
       <AccordionItem
         showDescription={showDescription}
         fontWeightBold={fontWeightBold}
         ariaExpanded={ariaExpanded}
+        background={background}
         item={item}
         index={index}
         onClick={() => {
