@@ -42,7 +42,7 @@ const Banner = (props: Banner) => {
         <p>{c_deepBlueStoreMessage}</p>
         <div className="answers-layout">
       <div className="search-bar"></div>
-   {/* <SearchBar /> */}
+    <SearchBar />
     </div>
 </div>  
 

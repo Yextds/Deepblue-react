@@ -553,7 +553,7 @@ FAQ
   after:transition-all  after:duration-150 lg:!text-sm xl:text-base  after:w-2 after:h-2 after:border-r-2 after:border-b-2 after:border-white after:transform after:rotate-45
 }
 
-.faq-tab-content { @apply !bg-white w-full  max-h-0 px-4  text-white overflow-hidden  }
+.faq-tab-content { @apply !bg-white w-full  max-h-0 px-4  text-white}
 .faq-tab-close { display: flex;  justify-content: flex-end;  padding: 1em;  font-size: 0.75em;  background: #2c3e50; cursor: pointer;}
 .faq-tab.current .faq-tab-label{  @apply text-white bg-[#115EAC] before:bg-white after:border-blue-primary after:-rotate-[135deg] after:top-[15px]}
 .faq-tab.current .faq-tab-content {  @apply max-h-screen p-4 text-[#115EAC] border-blue-primary border border-solid lg:transition-all lg:duration-500 xl:text-base }
@@ -706,3 +706,4 @@ Footer
 /* .menu-main-bx .StyledTab-sc-x2pbow-0:first-child a {@apply bg-blue-dark rounded-2xl    text-white} */
 .jtcALc{@apply  bg-blue-dark rounded-2xl    text-white} 
 .cOEnpb{@apply  bg-blue-dark rounded-2xl    text-white} 
+

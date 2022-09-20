@@ -98,6 +98,11 @@ import Faq from "../components/location-detail/Faq";
      title: document.name,
      charset: "UTF-8",
      viewport: "width=device-width, initial-scale=1",
+     other:`<link
+     rel="stylesheet"
+     type="text/css"
+     href="https://assets.sitescdn.net/answers/v1/answers.css"
+   />`,
      tags: [
        {
          type: "meta",
@@ -115,6 +120,10 @@ import Faq from "../components/location-detail/Faq";
    path,
    document,
  }) => {
+
+
+  console.log('-----');
+
    const {    
      name,
      address,
@@ -151,70 +160,37 @@ import Faq from "../components/location-detail/Faq";
 
    return (
      <>
-          <Nav />
+    <Nav />
           <Banner name={name} c_deepBlueStoreMessage={c_deepBlueStoreMessage}/>
-          <Breadcrumb dm_directoryParents={dm_directoryParents} name={name}/>             
+
+          <Breadcrumb dm_directoryParents={dm_directoryParents} name={name}/> 
+          {address||name||c_documentURLDeepBlue1||c_extraservices2||yextDisplayCoordinate||hours||deliveryHours||takeoutHours?            
+          
           <Contact address={address} name={name} c_documentURLDeepBlue1={c_documentURLDeepBlue1} c_extraservices2={c_extraservices2} phone={mainPhone} latitude={yextDisplayCoordinate.latitude}
           longitude={yextDisplayCoordinate.longitude} hours={hours} deliveryHours={deliveryHours} takeoutHours={takeoutHours}></Contact>
+          :''}
+          
+          {services?
           <Services services={services}/>
+          :""}
+          
+          {photoGallery?
           <About name={name} photoGallery={photoGallery}  description={description}/>
+          :''}
+          
           {c_relatedmenuitemsdeepblue?
           <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue} c_documentURLDeepBlue1={c_documentURLDeepBlue1.uRL2} c_documentURLDeepBlue1prim={c_documentURLDeepBlue1.primaryCTA} name="Allergens"/>
                         :''}
+          
+          {c_extraServiceAvailable1?
           <Faciltites c_extraServiceAvailable1={c_extraServiceAvailable1} />
+          :''}
+          
           {c_relatedFAQs?
           <Faq c_relatedFAQs={c_relatedFAQs}/>:''}
           
-   {/* {c_relatedFAQs?
-    <div className=" faq-sec w-full mt-0 lg:mt-36 xl:mt-52 relative  pb-9  before:shadow-[10px_3px_26px_rgba(0,0,0,0.10)] 
-    before:border-opacity-5 before:bg-cover  before:bg-left before:bg-no-repeat before:bg-[#f8fafc] before:content-[''] z-0 before:block before:absolute before:top-0 before:left-0 before:lg:-left-1/2 before:xl:-left-[40%] before:w-full before:bottom-0 before:xl-bottom-10">
-        <div className=" container-custom   mx-auto relative">
-            <div className=" grid grid-cols-1 lg:grid-cols-2">
-                  
-            <h2 className=" text-optimabold block text-center lg:hidden text-[42px]  pt-10 xl:pt-8 pb-4 uppercase text-text-blue-dark ">FREQUENTLY ASKED QUESTIONS </h2>
-
-
-<div className="relative order-1 lg:order-0 faq-sec-inner pr-0  lg:pr-20 xl:pr-6 pb-14  xl:pb-0">
-
-    <h2 className=" text-optimabold hidden lg:block text-[42px] text-left pt-10 xl:pt-8 xl:pl-1 pb-4 uppercase text-text-blue-dark ">FREQUENTLY ASKED QUESTIONS </h2>
-                    <div className="faq-tabs" >
-                  
-              {c_relatedFAQs.map((e,i)=>{
-                
-                  return(<>
-                <div  className={`faq-tab py-0 mt-2  ${current==e.question?'current':''}`} >
-                 <Accordion  preExpanded={preExpandedarr}>
-                 {e.question? <AccordionItem uuid={e.question}>
-                <AccordionItemHeading>
-                    <AccordionItemButton>
-                    <h3 id={e.question} className="faq-tab-label  border-[1px] !text-base   border-[#3A78B7]  !p-2 " onClick={setclass}>{e.question}</h3>
-                    </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel>
-                <div className="faq-tab-content">
-                  {e.answer}
-                </div>
-                </AccordionItemPanel>
-               </AccordionItem>:''}
-              </Accordion>
-              </div>  
-                  </>)
-              })}  
-      </div>
-      <div className="text-center  absolute bottom-0 xl:bottom-0 left-0 w-full pr-0  lg:pr-16"> <a href="#" class="bg-blue-primary mt-4  xl:mt-0 uppercase  px-5
-                         text-white hover:text-white text-sm !leading-9 text-center
-                        inline-block rounded-sm text-main-blue   w-[163px]
-                        hover:transition-all transform hover:scale-[1.09]"> view more </a> </div>
-
-   </div>
-<div className="relative  order-0 lg:order-1  right-0 mt-4 px-4 lg:px-0 mt-0 lg:-mt-10  xl:-mt-36 lg:-ml-14 xl:ml-6">
-<img className="rounded-tl-2xl w-full rounded-br-2xl  " src={dtl3} alt=""/>
-    </div>
-    </div>
-    </div>
-    </div>
-:''}  */}
-          <Nearby latitude={yextDisplayCoordinate.latitude} longitude={yextDisplayCoordinate.longitude}/>     
+          {yextDisplayCoordinate?
+          <Nearby latitude={yextDisplayCoordinate.latitude} longitude={yextDisplayCoordinate.longitude}/>:''}     
     <Footer/>
 
 

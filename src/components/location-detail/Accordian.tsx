@@ -21,6 +21,8 @@ export default function Accordian(props) {
         preExpandedarr=[props.takeoutHours]
     }
    
+    console.log('preExpandedarr', preExpandedarr)
+
     return (
         <Accordion preExpanded={preExpandedarr}>
                  {props.deliveryHours? <AccordionItem uuid={props.deliveryHours}>

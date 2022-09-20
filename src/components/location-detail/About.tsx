@@ -4,9 +4,8 @@ import dt12 from "../../images/dtl2.jpg"
 import PhotoSlider from "./PhotoSlider"
 
 export default function About(props:any){
-  console.log(props)
+ 
   return (
-
     <>
     <div className="about-sec">
     <div className="container-custom mx-auto flex flex-wrap">
@@ -20,7 +19,7 @@ export default function About(props:any){
             </div>
         </div>  
         </div>
-        <div className="w-full overflow-hidden overflow-visible lg:w-3/5 xl:w-[50.6%] about-content ml-auto">
+        <div className="w-full overflow-hidden overflow-visible lg:w-3/5 xl:w-[50.6%] about-content ml-auto"> 
             <h3>{props.name}</h3>
             <p>{props.description}
 </p>

@@ -20,7 +20,7 @@ export default function Breadcrumb(props){
                     
                     <>
                     {i==2?
-                    <a key={i} className="transition-all duration-300 hover:text-green"
+                    <a key={i} className="transition-all duration-300 "
                     href={e.slug}>{e.name}</a>:''}
                     </>
                    )

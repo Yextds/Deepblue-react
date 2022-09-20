@@ -37,15 +37,9 @@ const [isActive, setIsActive] = useState(false);
                                 80z"></path>
                             </svg>
                         </div>
-                    <div className="">
-                        <h3 className="text-[#3D3935] text-[15px] ">{name}</h3>
-                        <div id="address" className="mb-3 text-[#2f363b] text-base">
-                            <div className="">{address.line1}</div>
-                            <div className="">{address.city}</div>
-                            <div> {address.postalCode}</div>
-                            <div className=""></div>
-                        </div>
-                    </div>
+                      <p><b>{name}</b><br/>
+                      {address.line1}{address.city}{address.postalCode}
+                      </p>
                 </div>
                 <div className="store-phone">
                 <div className="phn-icons">
@@ -66,7 +60,7 @@ const [isActive, setIsActive] = useState(false);
                        <li><a id="address" className=" bg-blue-primary text-sm w-36
                             md:w-40 xl:w-[177px]  inline-block !leading-8 rounded-sm  lg:py-1 xl:py-0.5
                             text-white  text-center transition-all transform
-                            hover:scale-[1.09]" href={`https://www.google.com/maps/dir/?api=1&amp;destination=${address.line1},${address.postalCode}`}
+                            hover:scale-[1.09]" href={`https://www.google.com/maps/dir/?api=1&destination=${address.line1},${address.postalCode}`}
                            target="_blank"><svg className="w-4 h-4
                                 inline-block" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-marker-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
                                 <path fill="currentColor" d="M172.268

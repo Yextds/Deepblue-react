@@ -7,6 +7,7 @@ import dt12 from "../../images/dtl2.jpg"
 const PhotoSlider = (props: any) => {
   const { photoGallery, height, width } = props;  
   return (
+    <>
     <Splide options={ {
       arrows: true
     } }>
@@ -23,6 +24,7 @@ const PhotoSlider = (props: any) => {
          )
       })}
     </Splide>
+    </>
   );
 
 

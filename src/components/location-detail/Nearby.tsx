@@ -5,6 +5,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 export default function Nearby(props: any) {
+  
   const [neabyData, setnearbyData] = React.useState([]);
   const [parsedOffset, setparsedOffset] = React.useState("");
   const { latitude, longitude } = props;
@@ -21,7 +22,9 @@ export default function Nearby(props: any) {
   }, []);
 
   return (
+   
     <>
+     {console.log(latitude,"nearbydata")}
       <div className="nearby-sec">
         <div className="container-custom mx-auto">
           <div className="w-full text-center">
