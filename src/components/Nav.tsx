@@ -1,10 +1,25 @@
 import * as React from "react";
+import { JsonLd } from "react-schemaorg";
 const Nav = (props) => {
     console.log(props.c_deepblueheader)
     function menuFunction() {
         document.getElementById("menu-btn").classList.toggle("active");
         document.getElementById("menu-responsive").classList.toggle("show");
     }
+    // {props.c_deepblueheader.map((label)=>{
+    //     return(
+    //         <>
+    //         <li className={`nav-item mx-2 ${label}`} >
+    //         <a href="/" className="nav-link" data-drupal-link-system-path="node/3">{label.name}</a>
+    //         </li>
+    //         </>
+    //     )
+    // })}
+    //     const renderedfaq = props.c_deepblueheader.map((item, index) => {
+    //     const firstdiv = index ===  0  ? "current" : "hidden";
+    //     const seconddiv = index ===  1  ? "bg-[#115eac] !text-white" : "";
+    //     const thirddiv = index === 2 ? "font-weight-bold faq-tab py-0 mt-2": "";
+    //     const fourthdiv = index === 3 ? "font-weight-bold faq-tab py-0 mt-2": "";
   return (
    <>  
 <nav className="navbar navbar-expand-lg justify-content-between navbar-light
@@ -224,6 +239,7 @@ const Nav = (props) => {
                                 </svg>
                             </a>
                         </li>
+                      
                        
                         <li className="nav-item mx-2">
                             <a href="/" className="nav-link" data-drupal-link-system-path="node/3">About</a>

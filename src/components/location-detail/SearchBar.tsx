@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
             container: ".SearchBarContainer",
 			placeholderText: 'What would you like to know?',
 			redirectUrl: "https://master-laborious--mammal--antiques-sbx-pgsdemo-com.sbx.preview.pagescdn.com",
-			customIconUrl: {search}
+			customIconUrl: `${search}`
           });
         }
       });
