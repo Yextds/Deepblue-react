@@ -14,8 +14,7 @@ export default function Services(props){
         <h2 className=" text-[42px] text-center pt-14 pb-6 uppercase text-[#115EAC] ">SERVICES</h2>
  <div className="row">
         <div className=" flex flex-col md:flex-row px-4 lg:px-0  justify-center">
-        {props.c_restaurantService.map((Services,i)=>{
-                              console.log(Services,Services.serviceURL.uRL)
+        {props.c_restaurantService.map((Services,i)=>{     
     return(
        
         <>
@@ -35,7 +34,7 @@ export default function Services(props){
                     <h4> {Services.serviceName}</h4>
                     <p>{Services.serviceText}</p>
 
-                    <a href={Services.serviceURL.uRl} className=" bg-[#115EAC] bg-opacity-90 xl:w-[278px] font-optimabold rounded py-2  xl:py-3 px-10 text-white transition-all transform hover:scale-[1.09]   text-center w-60 inline-block ">
+                    <a href={Services.serviceURL.uRL} target="_blank" className=" bg-[#115EAC] bg-opacity-90 xl:w-[278px] font-optimabold rounded py-2  xl:py-3 px-10 text-white transition-all transform hover:scale-[1.09]   text-center w-60 inline-block ">
                        {Services.serviceURL.primaryCTA}</a>
                 </div>
             </div>

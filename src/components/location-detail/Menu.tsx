@@ -99,8 +99,8 @@ const Menu = (props) => {
                 <ul>
                 <li>
               
-                <div id="main"></div>
-               {/* <Model c_documentURLDeepBlue1={props.c_documentURLDeepBlue1} c_documentURLDeepBlue1prim={props.c_documentURLDeepBlue1prim} name="Allergens"/> */}
+                
+               <Model c_documentURLDeepBlue1={props.c_documentURLDeepBlue1} c_documentURLDeepBlue1prim={props.c_documentURLDeepBlue1prim} name="Allergens"/>
                  
                 </li>
                 <li><a className="#"> Collection</a></li>

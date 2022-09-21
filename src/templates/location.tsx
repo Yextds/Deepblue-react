@@ -163,7 +163,7 @@ import Faq from "../components/location-detail/Faq";
     }
 
    
-    if (c_relatedmenuitemsdeepblue !== undefined) {
+    if (c_relatedmenuitemsdeepblue === undefined) {
       console.log([c_relatedmenuitemsdeepblue, 'c_relatedmenuitemsdeepblue']);
     }
    return (
