@@ -231,8 +231,10 @@ import Faq from "../components/location-detail/Faq";
           <Faq c_relatedFAQs={c_relatedFAQs}/>:''}
           
           {yextDisplayCoordinate?
-          <Nearby latitude={yextDisplayCoordinate.latitude} longitude={yextDisplayCoordinate.longitude}/>:''}     
+          <Nearby latitude={yextDisplayCoordinate.latitude} longitude={yextDisplayCoordinate.longitude}/>:''}    
+    {c_footerdeepblue?       
     <Footer c_footerdeepblue={c_footerdeepblue}/>
+  :''}
    
 
      </>
