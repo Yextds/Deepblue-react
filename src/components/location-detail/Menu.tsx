@@ -5,6 +5,7 @@ import { Tabs, TabList, Tab, TabPanel } from '@zendeskgarden/react-tabs';
 import Model from "./Model";
   
 const Menu = (props) => {
+    console.log(props,"jfvyhfchygfchfc")
     const [selectedTab, setSelectedTab] = useState('tab-1');
     const [myDataAccordintToMe, setMyDataAccordintToMe] = useState({});
     const [current,setCurrent]=useState('');
@@ -36,6 +37,7 @@ const Menu = (props) => {
  },[])
   return (  
     <>
+    { props.c_relatedmenuitemsdeepblue!== undefined?
      <ThemeProvider>
       <div className="xyz">
       <Tabs selectedItem={selectedTab} onChange={setSelectedTab}>
@@ -96,8 +98,11 @@ const Menu = (props) => {
             <div className="allergens-sec">
                 <ul>
                 <li>
-                <div id="main"></div> 
-                <Model c_documentURLDeepBlue1={props.c_documentURLDeepBlue1} c_documentURLDeepBlue1prim={props.c_documentURLDeepBlue1prim} name="Allergens"/></li>
+              
+                <div id="main"></div>
+               {/* <Model c_documentURLDeepBlue1={props.c_documentURLDeepBlue1} c_documentURLDeepBlue1prim={props.c_documentURLDeepBlue1prim} name="Allergens"/> */}
+                 
+                </li>
                 <li><a className="#"> Collection</a></li>
                 <li><a className="#"> Delivery : Our Driver</a></li>
                 <li><a className="#"> Dine In</a></li>
@@ -108,6 +113,7 @@ const Menu = (props) => {
       </Tabs>
       </div>
       </ThemeProvider>
+      :''}
       
 
 

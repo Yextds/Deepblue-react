@@ -64,6 +64,7 @@ import Faq from "../components/location-detail/Faq";
       "c_deepBlueStoreMessage",
       "c_extraservices2",
       "deliveryHours",
+      "c_restaurantService",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "c_relatedmenuitemsdeepblue.c_menunav",
@@ -134,6 +135,7 @@ import Faq from "../components/location-detail/Faq";
      c_deepBlueStoreMessage,
      c_extraservices2,
      c_facilitiesService,
+     c_restaurantService,
      c_documentURLDeepBlue1,
      photoGallery,
      description,
@@ -160,6 +162,10 @@ import Faq from "../components/location-detail/Faq";
       setCurrent(e.target.id)
     }
 
+   
+    if (c_relatedmenuitemsdeepblue !== undefined) {
+      console.log([c_relatedmenuitemsdeepblue, 'c_relatedmenuitemsdeepblue']);
+    }
    return (
      <>
     <Nav />
@@ -172,15 +178,15 @@ import Faq from "../components/location-detail/Faq";
           longitude={yextDisplayCoordinate.longitude} hours={hours} deliveryHours={deliveryHours} takeoutHours={takeoutHours}></Contact>
           :''}
           
-          {services?
-          <Services services={services}/>
+          {c_restaurantService?
+          <Services c_restaurantService={c_restaurantService}/>
           :""}
           
           {photoGallery?
           <About name={name} photoGallery={photoGallery}  description={description}/>
           :''}
           
-          {c_relatedmenuitemsdeepblue?
+          {c_relatedmenuitemsdeepblue !== undefined?
           <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue} c_documentURLDeepBlue1={c_documentURLDeepBlue1.uRL2} c_documentURLDeepBlue1prim={c_documentURLDeepBlue1.primaryCTA} name="Allergens"/>
                         :''}
           
