@@ -40,6 +40,7 @@ export default function Accordian(props) {
                         </div>  
                 </AccordionItemPanel>
             </AccordionItem>:''}
+            
             {props.hours?<AccordionItem uuid={props.hours}>
                 <AccordionItemHeading>
                     <AccordionItemButton>

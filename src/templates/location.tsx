@@ -66,7 +66,12 @@ import Faq from "../components/location-detail/Faq";
       "c_relatedFAQs.answer",
       "c_footerdeepblue.c_footerlabel",
       "c_footerdeepblue.c_socialicon",
-      "c_footerdeepblue.c_titledeep"
+      "c_footerdeepblue.c_titledeep",
+      "c_deepblueheader.c_deepblue_dropdown",
+      "c_deepblueheader.name",
+      "c_deepblueheader.slug",
+      "c_deepblueheader.c_cTA",
+
      ],
      filter: {
       savedFilterIds: ["1012371889"],
@@ -145,7 +150,8 @@ import Faq from "../components/location-detail/Faq";
      c_relatedFAQs,
      mainPhone,
      yextDisplayCoordinate,
-     c_footerdeepblue
+     c_footerdeepblue,
+     c_deepblueheader
    } = document;
 
    let preExpandedarr=[];
@@ -201,7 +207,7 @@ import Faq from "../components/location-detail/Faq";
             },
           }}
         />
-    <Nav />
+    <Nav c_deepblueheader={c_deepblueheader}/>
           <Banner name={name} c_deepBlueStoreMessage={c_deepBlueStoreMessage}/>
 
           <Breadcrumb dm_directoryParents={dm_directoryParents} name={name}/> 
@@ -232,9 +238,9 @@ import Faq from "../components/location-detail/Faq";
           
           {yextDisplayCoordinate?
           <Nearby latitude={yextDisplayCoordinate.latitude} longitude={yextDisplayCoordinate.longitude}/>:''}    
-    {c_footerdeepblue?       
-    <Footer c_footerdeepblue={c_footerdeepblue}/>
-  :''}
+          {c_footerdeepblue?       
+          <Footer c_footerdeepblue={c_footerdeepblue}/>
+        :''}
    
 
      </>

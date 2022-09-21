@@ -1,5 +1,6 @@
 import * as React from "react";
-const Nav = () => {
+const Nav = (props) => {
+    console.log(props.c_deepblueheader)
     function menuFunction() {
         document.getElementById("menu-btn").classList.toggle("active");
         document.getElementById("menu-responsive").classList.toggle("show");
@@ -223,10 +224,11 @@ const Nav = () => {
                                 </svg>
                             </a>
                         </li>
+                       
                         <li className="nav-item mx-2">
                             <a href="/" className="nav-link" data-drupal-link-system-path="node/3">About</a>
                         </li>
-                        <li className="nav-item active mx-2">
+                        <li className="nav-item  mx-2">
                             <a href="/" className="nav-link is-active"
                                 data-drupal-link-system-path="node/44">Locations</a>
                         </li>

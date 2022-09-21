@@ -13,6 +13,8 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import PageLayout from "../components/PageLayout";
+import  Nav  from "../components/Nav";
+import Footer from "../components/footer";
 
 
 /**
@@ -91,7 +93,6 @@ const State: Template<TemplateRenderProps> = ({
 }) => {
   const {    
     name,
-    c_deepBlueStoreMessage,
     dm_directoryParents,
     dm_directoryChildren
   } = document;
@@ -99,8 +100,8 @@ const State: Template<TemplateRenderProps> = ({
 
   return (
     <>
-     <PageLayout >
-         <Banner name={name} c_deepBlueStoreMessage={c_deepBlueStoreMessage}/>
+    <Nav/>
+         {/* <Banner name={name} c_deepBlueStoreMessage={c_deepBlueStoreMessage}/> */}
          <ul className="m-0 pt-5 flex flex-wrap  text-dark_orange">
             <li className="after:content-['/'] after:mx-1.5"><a className="transition-all duration-300 hover:text-green"
                     href="index.html">Home</a></li>
@@ -115,7 +116,7 @@ const State: Template<TemplateRenderProps> = ({
         )
      })}
         {/* <Breadcrumb dm_directoryParents={dm_directoryParents} name={name}/>                       */}
-      </PageLayout>
+     
     </>
   );
 };

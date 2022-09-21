@@ -5,7 +5,6 @@ import { Tabs, TabList, Tab, TabPanel } from '@zendeskgarden/react-tabs';
 import Model from "./Model";
   
 const Menu = (props) => {
-    console.log(props,"jfvyhfchygfchfc")
     const [selectedTab, setSelectedTab] = useState('tab-1');
     const [myDataAccordintToMe, setMyDataAccordintToMe] = useState({});
     const [current,setCurrent]=useState('');

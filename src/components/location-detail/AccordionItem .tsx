@@ -24,7 +24,7 @@ const AccordionItem = ({
       <div
         id={`faq${index + 1}_desc`}
         data-qa="faq__desc"
-        className={`faq__desc ${showDescription}`}
+        className={`faq-tab-content ${showDescription}`}
       >
         {item.answer}
       </div>
