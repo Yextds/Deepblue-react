@@ -16,7 +16,7 @@ const AccordionItem = ({
         aria-expanded={ariaExpanded}
         aria-controls={`faq${index + 1}_desc`}
         data-qa="faq__question-button"
-        className={`faq__question-button ${fontWeightBold}`}
+        className={`faq__question-button !px-0 ${fontWeightBold}`}
         onClick={onClick}
       >
       <h3 className={`faq-tab-label  border-[1px]   border-[#3A78B7]  !p-2 ${background} `}>{item.question}</h3>

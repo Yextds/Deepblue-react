@@ -546,7 +546,7 @@ FAQ
 
 /* FAQ accordion */
 .faq-tabs {  @apply  overflow-hidden}
-.faq-tab {  @apply  w-full px-2 xl:px-0 2xl:px-2  text-[#06488B] overflow-hidden}
+.faq-tab {  @apply  w-full px-0 xl:px-0 2xl:px-2  text-[#06488B] overflow-hidden}
 .faq-tab button{ @apply w-full   }
 .faq-tab-label{   @apply flex justify-between text-[#06488B] relative sm:p-4  
   border-blue-primary border border-solid  font-bold cursor-pointer before:bg-[#06488B] before:rounded-full before:w-[18.75px] before:h-[18.75px]

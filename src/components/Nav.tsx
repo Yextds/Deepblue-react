@@ -1,3 +1,4 @@
+import { list } from "postcss";
 import * as React from "react";
 import { JsonLd } from "react-schemaorg";
 const Nav = (props) => {
@@ -15,11 +16,11 @@ const Nav = (props) => {
     //         </>
     //     )
     // })}
-    //     const renderedfaq = props.c_deepblueheader.map((item, index) => {
-    //     const firstdiv = index ===  0  ? "current" : "hidden";
-    //     const seconddiv = index ===  1  ? "bg-[#115eac] !text-white" : "";
-    //     const thirddiv = index === 2 ? "font-weight-bold faq-tab py-0 mt-2": "";
-    //     const fourthdiv = index === 3 ? "font-weight-bold faq-tab py-0 mt-2": "";
+        const renderedfaq = props.c_deepblueheader.map((item, index) => {
+        const firstdiv = index ===  2  ? "navbar-text nav-item mx-2 dropdown relative group" : "";
+          
+        })
+    
   return (
    <>  
 <nav className="navbar navbar-expand-lg justify-content-between navbar-light
@@ -239,9 +240,37 @@ const Nav = (props) => {
                                 </svg>
                             </a>
                         </li>
-                      
+                        {props.c_deepblueheader.map((i:any)=>{
+                            console.log(i.c_deepblue_dropdown)
+                           
+                        return(
+                            <>
+                            <li className={i.c_deepblue_dropdown ? "navbar-text nav-item mx-2 dropdown relative group"  : "nav-item mx-2" }  >
+                                <a href="/" className="nav-link" data-drupal-link-system-path="node/3">{i.name}</a>
+                                <div
+                                            className="dropdown-menu absolute top-full right-0 lg:-right-32 lg:rounded-sm   min-w-[220px] bg-white text-black flex flex-col px-4 py-2 hidden group-hover:block">
+                                {
+                             i.c_deepblue_dropdown &&    i.c_deepblue_dropdown.map((list:any)=>{
+                                        return(
+                                            <>        
+                                            <a href="#" className="dropdown-item "
+                                                data-drupal-link-system-path="node/34">{list.label}</a>
+                                       
+                                            
+                                            </>
+                                        )
+                                    })
+                                }
+                                 </div>
+                            </li>
+                            </>
+                            )
+                                })
+
+
+                        }
                        
-                        <li className="nav-item mx-2">
+                        {/* <li className="nav-item mx-2">
                             <a href="/" className="nav-link" data-drupal-link-system-path="node/3">About</a>
                         </li>
                         <li className="nav-item  mx-2">
@@ -273,7 +302,7 @@ const Nav = (props) => {
                             <a href="#" target="_blank" className="btn btn-outline-secondary
                                 vita-mojo-link nav-link !border-2 border-[#f9c85f]" title="Order Online">Order
                                 Online</a>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>

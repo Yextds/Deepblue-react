@@ -61,7 +61,7 @@ export default function Faq(props) {
           <div className=" container-custom   mx-auto relative">
         <div className=" grid grid-cols-1 lg:grid-cols-2">
         <h2 className=" text-optimabold block text-center lg:hidden text-[42px]  pt-10 xl:pt-8 pb-4 uppercase text-text-blue-dark ">FREQUENTLY ASKED QUESTIONS </h2>
-            <div className="relative order-1 lg:order-0 faq-sec-inner pr-0  lg:pr-20 xl:pr-6 pb-14  xl:pb-0">
+            <div className="relative order-1 lg:order-0 faq-sec-inner pr-0  lg:pr-20 xl:pr-6 pb-14  xl:pb-12 2xl:pb-16">
                 <h2 className=" text-optimabold hidden lg:block text-[42px] text-left pt-10 xl:pt-8 pb-4 uppercase text-text-blue-dark ">
                   FREQUENTLY ASKED QUESTIONS{" "}
                 </h2>
@@ -73,9 +73,9 @@ export default function Faq(props) {
                         hover:transition-all transform hover:scale-[1.09]"> view more </a> </div>
 
               </div>
-              <div className="relative  order-0 lg:order-1  right-0 mt-4 px-4 lg:px-0 mt-0 lg:-mt-10  xl:-mt-36 lg:-ml-14 xl:ml-6">
+              <div className="relative  order-0 lg:order-1  right-0 mt-4 lg:px-4 lg:px-0 mt-0 lg:-mt-10  xl:-mt-36 lg:-ml-14 xl:ml-6">
                 <img
-                  className="rounded-tl-2xl w-full rounded-br-2xl  "
+                  className="rounded-tl-2xl w-full rounded-br-2xl object-cover h-full "
                   src={dtl3}
                   alt=""
                 />
