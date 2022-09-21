@@ -67,7 +67,7 @@ export default function Nearby(props: any) {
                           <SplideSlide key={location.name}>
                             <div className="near-location">
                               <h4>
-                                <a href="">{location.name}</a>
+                                <a href={location.slug}>{location.name}</a>
                               </h4>
                               <div className="store-address">
                                 <svg
