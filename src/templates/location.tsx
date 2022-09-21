@@ -63,7 +63,10 @@ import Faq from "../components/location-detail/Faq";
       "c_relatedmenuitemsdeepblue.name",
       "c_relatedmenuitemsdeepblue.slug",
       "c_relatedmenuitemsdeepblue.photoGallery",
-      "c_relatedFAQs.answer"
+      "c_relatedFAQs.answer",
+      "c_footerdeepblue.c_footerlabel",
+      "c_footerdeepblue.c_socialicon",
+      "c_footerdeepblue.c_titledeep"
      ],
      filter: {
       savedFilterIds: ["1012371889"],
@@ -122,9 +125,6 @@ import Faq from "../components/location-detail/Faq";
    document,
  }) => {
 
-
-  console.log('-----');
-
    const {    
      name,
      address,
@@ -144,7 +144,8 @@ import Faq from "../components/location-detail/Faq";
      services,
      c_relatedFAQs,
      mainPhone,
-     yextDisplayCoordinate
+     yextDisplayCoordinate,
+     c_footerdeepblue
    } = document;
 
    let preExpandedarr=[];
@@ -167,6 +168,7 @@ import Faq from "../components/location-detail/Faq";
     }
    return (
      <>
+    
         <JsonLd<Restaurant>
           item={{
             "@context": "https://schema.org",
@@ -230,8 +232,8 @@ import Faq from "../components/location-detail/Faq";
           
           {yextDisplayCoordinate?
           <Nearby latitude={yextDisplayCoordinate.latitude} longitude={yextDisplayCoordinate.longitude}/>:''}     
-    <Footer/>
-
+    <Footer c_footerdeepblue={c_footerdeepblue}/>
+   
 
      </>
    );

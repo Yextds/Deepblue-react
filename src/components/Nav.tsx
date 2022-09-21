@@ -1,5 +1,9 @@
 import * as React from "react";
 const Nav = () => {
+    function menuFunction() {
+        document.getElementById("menu-btn").classList.toggle("active");
+        document.getElementById("menu-responsive").classList.toggle("show");
+    }
   return (
    <>  
 <nav className="navbar navbar-expand-lg justify-content-between navbar-light
@@ -156,7 +160,7 @@ const Nav = () => {
             </div>
         </a>
 
-        <button id="menu-btn" className="ml-auto text-center lg:hidden w-10 h-10 text-white my-2 mx-4" type="button">
+        <button id="menu-btn" onClick={menuFunction} className="ml-auto text-center lg:hidden w-10 h-10 text-white my-2 mx-4" type="button">
             <span className="when-closed">
                 <svg className="w-7 h-7 ml-auto" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars"
                     role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0

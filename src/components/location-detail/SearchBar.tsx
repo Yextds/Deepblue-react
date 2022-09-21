@@ -1,5 +1,6 @@
 import * as React from "react";
 import {useEffect} from "react";
+import search from "../../images/search.svg"
 		
 class SearchBar extends React.Component {
 	
@@ -28,7 +29,7 @@ class SearchBar extends React.Component {
             container: ".SearchBarContainer",
 			placeholderText: 'What would you like to know?',
 			redirectUrl: "https://master-laborious--mammal--antiques-sbx-pgsdemo-com.sbx.preview.pagescdn.com",
-			customIconUrl: "/src/images/search.svg"
+			customIconUrl: {search}
           });
         }
       });
