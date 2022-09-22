@@ -4,6 +4,7 @@
  import Breadcrumb from "../components/location-detail/Breadcrumb"
  import Contact from "../components/location-detail/contact";
  import Nearby from "../components/location-detail/Nearby";
+ import { nearByLocation } from "../types/nearByLocation";
  import "../index.css";
  import {
    Template,
@@ -14,18 +15,20 @@
    TemplateRenderProps,
    GetHeadConfig,
    HeadConfig,
+   TransformProps
  } from "@yext/pages";
  import PageLayout from "../components/PageLayout";
 import Services from "../components/location-detail/Services";
 import About from "../components/location-detail/About";
 import Menu from "../components/location-detail/Menu";
 import Model from "../components/location-detail/Model";
-import { SearchHeadlessProvider } from "@yext/search-headless-react";
 import Faciltites from "../components/location-detail/Facilities";
 import { JsonLd } from "react-schemaorg";
 import   Nav  from "../components/Nav";
 import Footer from "../components/footer";
 import Faq from "../components/location-detail/Faq";
+import fetch from 'cross-fetch';
+
  
  export const config: TemplateConfig = {
    stream: {
@@ -124,10 +127,47 @@ import Faq from "../components/location-detail/Faq";
    };
  };
  
- const Location: Template<TemplateRenderProps> = ({
+
+ type ExternalApiData = TemplateProps & { externalApiData: nearByLocation };
+ export const transformProps: TransformProps<ExternalApiData> = async (
+   data: any
+ ) => {
+   var baseURL = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500";
+   var api_key = "b262ae7768eec3bfa53bfca6d48e4000";
+   var vparam = "20181017";
+   var location=`${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}`;
+   var limit = 4;
+   var offset=0;
+   var entityTypes =
+       "restaurant";
+   var fields = "name,hours,neighborhood,address,mainPhone,slug,timeZoneUtcOffset,displayCoordinate,yextDisplayCoordinate";
+   
+   var fullURL = baseURL
+       + "&api_key=" + api_key 
+       + "&v=" +  vparam
+       + "&location=" + location
+       + "&limit=" + limit
+       + "&entityTypes=" + entityTypes
+       + "&fields=" + fields
+       + "&resolvePlaceholders=true"
+       +"&offset="+offset; 
+   
+   const externalApiData = (await fetch(fullURL).then((res: any) =>
+     res.json()
+   )) as nearByLocation;
+   return { ...data, externalApiData };
+ };
+
+
+ type ExternalApiRenderData = TemplateRenderProps & {
+  externalApiData: nearByLocation;
+};
+
+ const Location: Template<ExternalApiRenderData> = ({
    relativePrefixToRoot,
    path,
    document,
+   externalApiData
  }) => {
 
    const {    
@@ -153,6 +193,7 @@ import Faq from "../components/location-detail/Faq";
      c_footerdeepblue,
      c_deepblueheader
    } = document;
+
 
    let preExpandedarr=[];
 
@@ -239,7 +280,7 @@ import Faq from "../components/location-detail/Faq";
           <Faq c_relatedFAQs={c_relatedFAQs}/>:''}
           
           {yextDisplayCoordinate?
-          <Nearby latitude={yextDisplayCoordinate.latitude} longitude={yextDisplayCoordinate.longitude}/>:''}    
+          <Nearby externalApiData={externalApiData}/>:''}    
           {c_footerdeepblue?       
           <Footer c_footerdeepblue={c_footerdeepblue}/>
         :''}

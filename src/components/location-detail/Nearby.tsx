@@ -6,25 +6,13 @@ import "@splidejs/react-splide/css";
 
 export default function Nearby(props: any) {
   
-  const [neabyData, setnearbyData] = React.useState([]);
-  const [parsedOffset, setparsedOffset] = React.useState("");
-  const { latitude, longitude } = props;
-  React.useEffect(() => {
-    let params = {
-      location: `${latitude},${longitude}`,
-      offset: 0,
-      limit: 4,
-    };
+  const [neabyData, setnearbyData] = React.useState(props.externalApiData.response.entities);
 
-    ApiCall.getNearbyLocations(params).then((data) => {
-      setnearbyData(data.response.entities);
-    });
-  }, []);
+  
 
   return (
    
     <>
-     {console.log(latitude,"nearbydata")}
       <div className="nearby-sec">
         <div className="container-custom mx-auto">
           <div className="w-full text-center">

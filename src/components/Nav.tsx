@@ -7,19 +7,7 @@ const Nav = (props) => {
         document.getElementById("menu-btn").classList.toggle("active");
         document.getElementById("menu-responsive").classList.toggle("show");
     }
-    // {props.c_deepblueheader.map((label)=>{
-    //     return(
-    //         <>
-    //         <li className={`nav-item mx-2 ${label}`} >
-    //         <a href="/" className="nav-link" data-drupal-link-system-path="node/3">{label.name}</a>
-    //         </li>
-    //         </>
-    //     )
-    // })}
-        const renderedfaq = props.c_deepblueheader.map((item, index) => {
-        const firstdiv = index ===  2  ? "navbar-text nav-item mx-2 dropdown relative group" : "";
-          
-        })
+  
     
   return (
    <>  
@@ -241,19 +229,22 @@ const Nav = (props) => {
                             </a>
                         </li>
                         {props.c_deepblueheader.map((i:any)=>{
-                            console.log(i.c_deepblue_dropdown)
+                            var lastitem=props.c_deepblueheader[props.c_deepblueheader.length - 1]
+    
                            
                         return(
                             <>
                             <li className={i.c_deepblue_dropdown ? "navbar-text nav-item mx-2 dropdown relative group"  : "nav-item mx-2" }  >
-                                <a href="/" className="nav-link" data-drupal-link-system-path="node/3">{i.name}</a>
+                                {i.c_deepblue_dropdown? <span className="nav-link dropdown-toggle text-[#004b97]" data-bs-toggle="dropdown">{i.name}</span>:
+                                <a href={i.c_cTA.uRL} className={i==lastitem?"btn btn-outline-secondary vita-mojo-link nav-link !border-2 border-[#f9c85f]":"nav-link"} data-drupal-link-system-path="node/3">{i.name}</a>}
+                                
                                 <div
                                             className="dropdown-menu absolute top-full right-0 lg:-right-32 lg:rounded-sm   min-w-[220px] bg-white text-black flex flex-col px-4 py-2 hidden group-hover:block">
                                 {
                              i.c_deepblue_dropdown &&    i.c_deepblue_dropdown.map((list:any)=>{
                                         return(
                                             <>        
-                                            <a href="#" className="dropdown-item "
+                                            <a href={list.uRL} className="dropdown-item "
                                                 data-drupal-link-system-path="node/34">{list.label}</a>
                                        
                                             
@@ -262,6 +253,7 @@ const Nav = (props) => {
                                     })
                                 }
                                  </div>
+                            
                             </li>
                             </>
                             )
