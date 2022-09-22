@@ -211,19 +211,19 @@ import Faq from "../components/location-detail/Faq";
     }
 
    
-    if (c_relatedmenuitemsdeepblue === undefined) {
-      console.log([c_relatedmenuitemsdeepblue, 'c_relatedmenuitemsdeepblue']);
-    }
+    // if (c_relatedmenuitemsdeepblue === undefined) {
+    //   console.log([c_relatedmenuitemsdeepblue, 'c_relatedmenuitemsdeepblue']);
+    // }
 
-    let url2 = "";
-    if(typeof c_documentURLDeepBlue1.uRL2 !== undefined && c_documentURLDeepBlue1.uRL2 !== ""){
-       url2 = c_documentURLDeepBlue1.uRL2;
-    }
+    // let url2 = "";
+    // if(typeof c_documentURLDeepBlue1.uRL2 !== undefined && c_documentURLDeepBlue1.uRL2 !== ""){
+    //    url2 = c_documentURLDeepBlue1.uRL2;
+    // }
 
-    let primaryCTA = "";
-    if(typeof c_documentURLDeepBlue1.primaryCTA !== undefined){
-      primaryCTA = c_documentURLDeepBlue1.primaryCTA;
-    }
+    // let primaryCTA = "";
+    // if(typeof c_documentURLDeepBlue1.primaryCTA !== undefined){
+    //   primaryCTA = c_documentURLDeepBlue1.primaryCTA;
+    // }
 
     // console.log(['c_documentURLDeepBlue1', c_documentURLDeepBlue1]);
     
