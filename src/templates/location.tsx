@@ -207,7 +207,9 @@ import Faq from "../components/location-detail/Faq";
             },
           }}
         />
-    <Nav c_deepblueheader={c_deepblueheader}/>
+           {c_deepblueheader?
+          <Nav c_deepblueheader={c_deepblueheader}/>
+             :''}
           <Banner name={name} c_deepBlueStoreMessage={c_deepBlueStoreMessage}/>
 
           <Breadcrumb dm_directoryParents={dm_directoryParents} name={name}/> 

@@ -100,7 +100,7 @@ const State: Template<TemplateRenderProps> = ({
 
   return (
     <>
-    <Nav/>
+    {/* <Nav/> */}
          {/* <Banner name={name} c_deepBlueStoreMessage={c_deepBlueStoreMessage}/> */}
          <ul className="m-0 pt-5 flex flex-wrap  text-dark_orange">
             <li className="after:content-['/'] after:mx-1.5"><a className="transition-all duration-300 hover:text-green"
