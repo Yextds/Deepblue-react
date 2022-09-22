@@ -17,7 +17,7 @@ const Menu = (props) => {
 
    
  useEffect(()=>{
-
+    
     const keysFromData =props.c_relatedmenuitemsdeepblue?props.c_relatedmenuitemsdeepblue.map((e)=>{ return e.c_menunav }):'';
 
     if(keysFromData){
@@ -59,13 +59,13 @@ const Menu = (props) => {
              </ul> 
         </TabList> 
         <div id="tab-contents">
-        <a id="default-tab" href="#fish" className="text-black mob-tab-label  border-[1px] !text-base   border-[#3A78B7]  !p-2  current   p-4 tab-link !block lg:!hidden">FISH & CHIPS</a>    
-        <div id="fish" className="p-4 border border-blue-primary lg:border-none">
-        <div className="flex flex-wrap xl:-mx-6">
-        { Object.keys(myDataAccordintToMe).map((menuItem,i)=>{             
+         { Object.keys(myDataAccordintToMe).map((menuItem,i)=>{        
             return(
                 <>
-
+        <a onClick={setClass} id={menuItem} href={`#${ menuItem }`} className={`text-black mob-tab-label border-[1px] !text-base border-[#3A78B7] !p-2 p-4 tab-link !block lg:!hidden  ${current==menuItem?'current':'hidden'}`}>{ menuItem.replaceAll('_',' ') }</a>
+         {/* <a onClick={setClass} id={i==0?"default-tab":`${menuItem}`} href={`#${ menuItem }`} className={selectedTab=='tab-0'?'text-black mob-tab-label  border-[1px] !text-base   border-[#3A78B7]  !p-2  current':`p-4 tab-link !block lg:!hidden ${current==menuItem?'current':''}`} >{ menuItem.replaceAll('_',' ') }</a> */}
+        <div id={menuItem} className={`${current==menuItem?'p-4 border border-blue-primary lg:border-none':'p-4 border border-blue-primary lg:border-none hidden'}`}>
+        <div className="flex flex-wrap xl:-mx-6">
                 <TabPanel className="w-full" key={menuItem} item={`tab-${(i+1)}`}>
 <div className="flex  flex-wrap  xl:-mx-6 justify-center">
                     {props.c_relatedmenuitemsdeepblue?<>
@@ -87,19 +87,18 @@ const Menu = (props) => {
                     </>:''}
                     </div>
                 </TabPanel>
-
-                </>
-            )
-            })}
-             </div>
            </div>
+           </div>
+             </>
+            )
+        })}
             </div>
             <div className="allergens-sec">
                 <ul>
                 <li>
               
                 
-               <Model c_documentURLDeepBlue1={props.c_documentURLDeepBlue1} c_documentURLDeepBlue1prim={props.c_documentURLDeepBlue1prim} name="Allergens"/>
+               {/* <Model c_documentURLDeepBlue1={props.c_documentURLDeepBlue1} c_documentURLDeepBlue1prim={props.c_documentURLDeepBlue1prim} name="Allergens"/> */}
                  
                 </li>
                 <li><a className="#"> Collection</a></li>

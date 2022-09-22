@@ -1,0 +1,19 @@
+{
+    "$id": "site-entity",
+    "filter": {
+      "entityIds": ["6063987248632557434"]
+    },
+    "source": "knowledgeGraph",
+    "fields": [
+        "name",
+        "c_deepblue_dropdown",
+        "c_listdata",
+        "c_socialMedia",
+        "c_site",
+        "c_footeritem"    
+    ],
+    "localization": {
+      "locales": ["en"],
+      "primary": false
+    }
+  }

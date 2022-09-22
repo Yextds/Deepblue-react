@@ -227,8 +227,41 @@ const Nav = (props) => {
                                         0-1.7-16.93z"></path>
                                 </svg>
                             </a>
-                        </li>
-                        {props.c_deepblueheader.map((i:any)=>{
+                   </li>
+               
+                                    {props.c_deepblueheader.c_deepblue_dropdown.map((i:any)=>{
+                                    return(
+                                    <>
+                                    <li className="nav-item mx-2" >
+                                            <a href={i.uRL} className="nav-link" data-drupal-link-system-path="node/3">{i.label}</a>
+                                    </li>
+                                    </>
+                                    )
+                                    })}
+                                    {props.c_deepblueheader && props.c_deepblueheader.c_listdata.map((more,i)=>{
+                                        return(
+                                            <>
+                                             <li className="navbar-text nav-item mx-2 dropdown relative group">
+                                             <span className="nav-link dropdown-toggle text-[#004b97]" data-bs-toggle="dropdown">{more.fieldname}</span>
+                                             <div
+                                            className="dropdown-menu absolute top-full right-0 lg:-right-32 lg:rounded-sm   min-w-[220px] bg-white text-black flex flex-col px-4 py-2 hidden group-hover:block">
+                                        {
+                                        more.dropdownlist &&    more.dropdownlist.map((list:any)=>{
+                                                    return(
+                                                        <>        
+                                                        <a href={list.link} className="dropdown-item "
+                                                            data-drupal-link-system-path="node/34">{list.label}</a>
+                                                        </>
+                                                    )
+                                                })
+                                        }
+                                            </div>
+                                             </li>
+                                            </>
+                                        )
+                                    })}
+
+                        {/* {props.c_deepblueheader.map((i:any)=>{
                             var lastitem=props.c_deepblueheader[props.c_deepblueheader.length - 1]
     
                            
@@ -260,7 +293,7 @@ const Nav = (props) => {
                                 })
 
 
-                        }
+                        } */}
                        
                         {/* <li className="nav-item mx-2">
                             <a href="/" className="nav-link" data-drupal-link-system-path="node/3">About</a>

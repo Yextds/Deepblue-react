@@ -27,9 +27,8 @@ import { JsonLd } from "react-schemaorg";
 import   Nav  from "../components/Nav";
 import Footer from "../components/footer";
 import Faq from "../components/location-detail/Faq";
+// import { fetch } from "@yext/pages/util";
 
-
- 
  export const config: TemplateConfig = {
    stream: {
      $id: "deepbluelocation",
@@ -93,6 +92,7 @@ import Faq from "../components/location-detail/Faq";
  export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
    return [`index-old/${document.id.toString()}`];
  };
+ 
  
  export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
    relativePrefixToRoot,
@@ -171,6 +171,7 @@ import Faq from "../components/location-detail/Faq";
  }) => {
 
    const {    
+    _site,
      name,
      address,
      hours,
@@ -213,6 +214,21 @@ import Faq from "../components/location-detail/Faq";
     if (c_relatedmenuitemsdeepblue === undefined) {
       console.log([c_relatedmenuitemsdeepblue, 'c_relatedmenuitemsdeepblue']);
     }
+
+    let url2 = "";
+    if(typeof c_documentURLDeepBlue1.uRL2 !== undefined && c_documentURLDeepBlue1.uRL2 !== ""){
+       url2 = c_documentURLDeepBlue1.uRL2;
+    }
+
+    let primaryCTA = "";
+    if(typeof c_documentURLDeepBlue1.primaryCTA !== undefined){
+      primaryCTA = c_documentURLDeepBlue1.primaryCTA;
+    }
+
+    // console.log(['c_documentURLDeepBlue1', c_documentURLDeepBlue1]);
+    
+
+
    return (
      <>
     
@@ -249,7 +265,7 @@ import Faq from "../components/location-detail/Faq";
           }}
         />
            {c_deepblueheader?
-          <Nav c_deepblueheader={c_deepblueheader}/>
+          <Nav c_deepblueheader={_site} />
              :''}
           <Banner name={name} c_deepBlueStoreMessage={c_deepBlueStoreMessage}/>
 
@@ -269,7 +285,7 @@ import Faq from "../components/location-detail/Faq";
           :''}
           
           {c_relatedmenuitemsdeepblue !== undefined?
-          <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue} c_documentURLDeepBlue1={c_documentURLDeepBlue1.uRL2} c_documentURLDeepBlue1prim={c_documentURLDeepBlue1.primaryCTA} name="Allergens"/>
+          <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue}   c_documentURLDeepBlue1={url2} c_documentURLDeepBlue1prim={primaryCTA} name="Allergens"/>
                         :''}
           
           {c_facilitiesService?
@@ -282,7 +298,7 @@ import Faq from "../components/location-detail/Faq";
           {yextDisplayCoordinate?
           <Nearby externalApiData={externalApiData}/>:''}    
           {c_footerdeepblue?       
-          <Footer c_footerdeepblue={c_footerdeepblue}/>
+          <Footer c_footerdeepblue={_site}/>
         :''}
    
 
