@@ -284,9 +284,9 @@ import Faq from "../components/location-detail/Faq";
           <About name={name} photoGallery={photoGallery}  description={description}/>
           :''}
           
-          {c_relatedmenuitemsdeepblue !== undefined?
+          {/* {c_relatedmenuitemsdeepblue !== undefined?
           <Menu c_relatedmenuitemsdeepblue={c_relatedmenuitemsdeepblue}   c_documentURLDeepBlue1={url2} c_documentURLDeepBlue1prim={primaryCTA} name="Allergens"/>
-                        :''}
+                        :''} */}
           
           {c_facilitiesService?
           <Faciltites c_facilitiesService={c_facilitiesService} />
