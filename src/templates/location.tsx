@@ -27,7 +27,7 @@ import { JsonLd } from "react-schemaorg";
 import   Nav  from "../components/Nav";
 import Footer from "../components/footer";
 import Faq from "../components/location-detail/Faq";
-import fetch from 'cross-fetch';
+
 
  
  export const config: TemplateConfig = {
